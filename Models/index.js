@@ -4,7 +4,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 // Database connection with dialect of postgres specifying the database we are using
 // Port for my database is 5433
 // Database name is discover
-const sequelize = new Sequelize('kassem', 'postgres', '1159800', {
+const sequelize = new Sequelize('postgres', 'postgres', '1159800', {
     host: 'localhost',
     dialect: 'postgres', // Change to your database dialect (e.g., postgres, sqlite)
     port: 5432, // Change to your database port
