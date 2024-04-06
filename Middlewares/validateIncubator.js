@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator');
 // Define validation rules
 const validateIncubator = [
     body('BabyName').notEmpty().withMessage('BabyName is required'),
-    body('BabyAge').isInt({ min: 0 }).withMessage('BabyAge must be a positive integer'),
+    body('BabyAge').notEmpty().withMessage('BabyAge is required'),
     body('ParentName').notEmpty().withMessage('ParentName is required'),
     body('TimeOfRelease').isISO8601().toDate().withMessage('Invalid TimeOfRelease format'),
     body('Gender').notEmpty().withMessage('Gender is required'),

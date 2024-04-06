@@ -51,6 +51,7 @@ const login = async (req, res) => {
 
 
 	  if (email == undefined || password == undefined) {
+
       return res.status(400).send("Please enter your email and password");
     }
 
@@ -65,8 +66,9 @@ const login = async (req, res) => {
       return res.status(401).send("Authentication failed");
     }
 
-
-    console.log(await User.findAll());
+    if (!user) {
+      return res.status(401).send("Authentication failed");
+    }
 
     console.log(user);
     //if user email is found, compare password with bcrypt
