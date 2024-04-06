@@ -50,7 +50,7 @@ router.post('/incubator/createDevice', authenticateToken(['admin']), incubatorCo
  *               BabyName:
  *                 type: string
  *               BabyAge:
- *                 type: integer 
+ *                 type: string 
  *               ParentName:
  *                 type: string
  *               TimeOfRelease:

@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             field: 'babyName'
         },
         BabyAge: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
             field: 'babyAge'
         },

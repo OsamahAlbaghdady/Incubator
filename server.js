@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 // cors
 app.use(cors());
+app.options('*', cors());
 
 //middleware
 app.use(express.json());

@@ -49,6 +49,11 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+
+	  if (email == undefined || password == undefined) {
+      return res.status(400).send("Please enter your email and password");
+    }
+
     //find a user by their email
     const user = await User.findOne({
       where: {
@@ -56,6 +61,9 @@ const login = async (req, res) => {
       }
 
     });
+    if (!user) {
+      return res.status(401).send("Authentication failed");
+    }
 
 
     console.log(await User.findAll());
