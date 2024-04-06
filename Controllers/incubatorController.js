@@ -86,11 +86,9 @@ const createIncubator = async (req, res) => {
       returning: true,
     });
 
-    if (numberOfAffectedRows > 0) {
-      res.status(200).json({ incubator: affectedRows[0] });
-    } else {
+    if (numberOfAffectedRows <= 0) {
       res.status(404).json({ message: 'Incubator not found' });
-    }
+    } 
 
 
 
